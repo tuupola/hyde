@@ -11,9 +11,18 @@
   {{ if .IsHome -}}
   <title>{{ .Site.Title }}</title>
   {{- else -}}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }}</title>
   {{- end }}
   <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ .Permalink }}">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+  <meta name="twitter:title" content="{{if .IsHome }}{{ .Site.Title }}{{else}}{{ .Title }}{{end}}">
+  <meta name="twitter:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+  <meta property="og:url" content="{{ .Permalink }}">
 
   <!-- CSS -->
   <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
