@@ -6,7 +6,7 @@
     </main>
 
     {{ if not .Site.IsServer }}
-      {{ template "_internal/google_analytics_async.html" . }}
+      {{ template "partials/simple_analytics.html" . }}
     {{ end }}
   </body>
 </html>
