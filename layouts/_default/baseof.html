@@ -6,7 +6,7 @@
     </main>
 
     {{ if not .Site.IsServer }}
-      {{ template "partials/simple_analytics.html" . }}
+      {{ template "partials/plausible.html" . }}
     {{ end }}
   </body>
 </html>
